@@ -4,7 +4,10 @@
         <title>Goto a website</title>
     </head>
     <body>
-        <input type="url" id="urlInput" placeholder="Enter URL to goto"></input>
-        <input type="button" onclick="window.location.href = document.getElementById('urlInput').value" value="Goto"></input>
+        <form>
+            <label for="urlInput">Enter URL to goto (you must include the scheme specifier like https://)</label><br><br>
+            <input type="url" id="urlInput" size=50 placeholder="Enter URL to goto"></input>
+            <input type="button" onclick="window.location.href = document.getElementById('urlInput').value" value="Goto"></input>
+        </form>
     </body>
 </html>
