@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Goto a website</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <script>
@@ -18,12 +20,19 @@
         }
       });
     </script>
-    <div class="mainElements">
-      <h1>Goto a website</h1>
-      <label for="urlInput">Enter URL to goto</label><br><br>
-      <input type="text" id="schemeSpecifier" size=5 value="http://" placeholder="http://"></input>
-      <input type="text" id="urlInput" size=50 placeholder="google.com"></input>
-      <input type="submit" id="gotoButton" onclick="redirectToWebsite()" value="Goto"></input>
+    <link rel="stylesheet" href="gotoawebsite.css"></link>
+    <div class="content">
+      <p class="header">Goto a website</p>
+      <div class="innerContent">
+        <p class="subtext">Enter URL to goto</p>
+        <div class="urlTextBox">
+          <input type="text" class="textBox" id="schemeSpecifier" size=4 value="http://" placeholder="http://"></input>
+          <!--<span class="textBoxDivider"></span>-->
+          <input type="text" class="textBox" id="urlInput" size=50 placeholder="google.com"></input>
+          <!--<span class="textBoxDivider"></span>-->
+          <input type="submit" class="gotoButton" id="gotoButton" onclick="redirectToWebsite()" value="Goto"></input>
+        </div>
+      </div>
     </div>
   </body>
 </html>
