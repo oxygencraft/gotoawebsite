@@ -1,13 +1,29 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Goto a website</title>
-    </head>
-    <body>
-        <form>
-            <label for="urlInput">Enter URL to goto (you must include the scheme specifier like https://)</label><br><br>
-            <input type="url" id="urlInput" size=50 placeholder="Enter URL to goto"></input>
-            <input type="button" onclick="window.location.href = document.getElementById('urlInput').value" value="Goto"></input>
-        </form>
-    </body>
+  <head>
+    <title>Goto a website</title>
+  </head>
+  <body>
+    <script>
+      function redirectToWebsite() {
+        var schemeSpecifier = document.getElementById('schemeSpecifier').value;
+        var url = document.getElementById('urlInput').value;
+        window.location.href = schemeSpecifier + url;
+      }
+
+      document.body.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          redirectToWebsite();
+        }
+      });
+    </script>
+    <div class="mainElements">
+      <h1>Goto a website</h1>
+      <label for="urlInput">Enter URL to goto</label><br><br>
+      <input type="text" id="schemeSpecifier" size=5 value="http://" placeholder="http://"></input>
+      <input type="text" id="urlInput" size=50 placeholder="google.com"></input>
+      <input type="submit" id="gotoButton" onclick="redirectToWebsite()" value="Goto"></input>
+    </div>
+  </body>
 </html>
